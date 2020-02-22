@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "831788066681",
+    "firebase_url": "https://hydracon-a9121.firebaseio.com",
+    "project_id": "hydracon-a9121",
+    "storage_bucket": "hydracon-a9121.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:831788066681:android:52e02c8c14fd51f70af1a8",
+        "android_client_info": {
+          "package_name": "com.hydra.hydracon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "831788066681-6fbudvbg6uff5tkdakmlvvs4vf75r3bg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hydra.hydracon",
+            "certificate_hash": "ad1378ff15db94ec892518a4d318196032113ea1"
+          }
+        },
+        {
+          "client_id": "831788066681-rheo64rhof9b1k17cvl08o42v800da95.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbYKds6r1-gzdJfI8pt1nOjvWSvYHl7sc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "831788066681-rheo64rhof9b1k17cvl08o42v800da95.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
