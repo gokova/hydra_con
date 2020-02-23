@@ -2,9 +2,12 @@
 
 buildscript {
     ext.gradle_version = '3.5.3'
-    ext.kotlin_version = '1.3.50'
+    ext.kotlin_version = '1.3.61'
     ext.google_services_version = '4.3.3'
-    ext.firebase_version = '17.2.2'
+    ext.firebase_analytics_version = '17.2.2'
+    ext.firebase_database_version = '19.2.1'
+    ext.firebase_storage_version = '19.1.1'
+    ext.lifecycle_version = '2.2.0'
 
     repositories {
         google()
