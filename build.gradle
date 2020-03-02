@@ -8,6 +8,7 @@ buildscript {
     ext.firebase_database_version = '19.2.1'
     ext.firebase_storage_version = '19.1.1'
     ext.lifecycle_version = '2.2.0'
+    ext.timber_version = '4.7.1'
 
     repositories {
         google()
