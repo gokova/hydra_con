@@ -3,4 +3,5 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="action_logout">Logout</string>
+    <string name="splash_screen_logo_desc">HydraCon Logo</string>
 </resources>

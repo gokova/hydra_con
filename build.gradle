@@ -6,7 +6,8 @@ buildscript {
     ext.google_services_version = '4.3.3'
     ext.firebase_analytics_version = '17.2.2'
     ext.firebase_database_version = '19.2.1'
-    ext.firebase_storage_version = '19.1.1'
+    ext.firebase_auth_version = '19.2.0'
+    ext.firebase_uiauth_version = '6.2.0'
     ext.lifecycle_version = '2.2.0'
     ext.timber_version = '4.7.1'
 
