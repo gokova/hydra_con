@@ -67,9 +67,10 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.action_logout -> {
-                AuthUI.getInstance().signOut(this)
-                setResult(Activity.RESULT_OK)
-                finish()
+                AuthUI.getInstance().signOut(this).addOnCompleteListener {
+                    setResult(Activity.RESULT_OK)
+                    finish()
+                }
                 true
             }
             else -> super.onOptionsItemSelected(item)

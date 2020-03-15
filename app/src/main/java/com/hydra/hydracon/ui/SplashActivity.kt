@@ -7,10 +7,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.firebase.ui.auth.AuthUI
+import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.hydra.hydracon.R
 import com.hydra.hydracon.viewmodel.SplashViewModel
+import kotlinx.android.synthetic.main.content_main.*
 import timber.log.Timber
+import java.util.*
 
 class SplashActivity : AppCompatActivity() {
 
@@ -49,12 +55,31 @@ class SplashActivity : AppCompatActivity() {
     private fun onAuthStateChanged(signedInUser: FirebaseUser?) {
         if (signedInUser != null) {
             startActivityForResult(Intent(this, MainActivity::class.java), RC_MAIN_ACTIVITY)
+            viewModel.databaseReference.child("users").orderByChild("email")
+                .equalTo(signedInUser.email).addValueEventListener(getEventListener())
         } else {
-            startActivityFromChild(
-                this,
+            startActivityForResult(
                 AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(listOf(AuthUI.IdpConfig.EmailBuilder().build())).build(),
                 RC_SIGN_IN
             )
+        }
+    }
+
+    private fun getEventListener(): ValueEventListener {
+        return object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val user = (dataSnapshot.value as ArrayList<*>?)?.firstOrNull()
+                Timber.d("Get Data: $user")
+            }
+
+            override fun onCancelled(databaseError: DatabaseError) {
+                Timber.w("Load post onCanceled: ${databaseError.message}")
+                Snackbar.make(
+                    container,
+                    "Load post onCanceled: ${databaseError.message}",
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 }
